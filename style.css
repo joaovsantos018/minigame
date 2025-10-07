@@ -1,0 +1,43 @@
+  body {
+      background: #eef;
+      font-family: sans-serif;
+  }
+
+  .buttons,
+  .buttons:hover,
+  .buttons:active {
+      background-color: #007d46 !important;
+      color: white !important;
+      border: 1px solid #007d46 !important;
+  }
+
+  .locomotiva{
+    width: 7%;
+    height: 7%;
+  }
+
+
+  #trem {
+      display: flex;
+      position: relative;
+      top: 100px;
+      transition: left 0.5s;
+  }
+
+  .vagao {
+      width: 9%;
+      height: 30%;
+  }
+
+  .invisivel {
+      display: none;
+  }
+
+  #linha {
+      position: absolute;
+      top: 160px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: black;
+  }
