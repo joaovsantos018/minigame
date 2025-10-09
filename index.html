@@ -10,15 +10,33 @@
 </head>
 
 <body>
-  <h2>Mini Game - Desenvolvimento</h2> 
-  <button class="btn buttons" onclick="mover()">Adicionar Vagão</button>
-   <button class="btn buttons" onclick="mover()">Mover
-    Trem</button>
-  <div id="trem">
-     <img class="vagao" src="./icones/vagaoicon.png">
-      <img class="vagao" src="./icones/vagaoicon.png">
-       <img class="locomotiva" src="./icones/locomotivaicon.png">
-       </div>
+  <div class="header">
+    <h2>Mini Game - Desenvolvimento</h2>
+    <div class="headerButtons">
+      <button class="btn buttons" onclick="adicionarVagao()">Adicionar Vagão</button>
+      <button class="btn buttons" onclick="removerVagao()">Remover Vagão</button>
+      <button class="btn buttons" onclick="mover()">Mover
+        Trem</button>
+    </div>
+  </div>
+  <div class="trajeto">
+
+    <div id="trem" class="trem">
+
+      <div class="vagoes">
+        <img id="vagao1" class="vagao invisivel" src="./icones/vagaoicon.png">
+        <img id="vagao2" class="vagao invisivel" src="./icones/vagaoicon.png">
+        <img id="vagao3" class="vagao invisivel" src="./icones/vagaoicon.png">
+        <img id="vagao4" class="vagao invisivel" src="./icones/vagaoicon.png">
+      </div>
+      <div class="locomotivaDiv">
+        <img class="locomotiva" src="./icones/locomotivaicon.png">
+      </div>
+    </div>
+    <div id="chegada">
+      <img src="./icones/7876426.png" class="flagIcon">
+    </div>
+  </div>
   <div id="linha"></div>
   <script src="script.js"></script>
 </body>

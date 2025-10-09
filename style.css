@@ -1,43 +1,84 @@
-  body {
-      background: #eef;
-      font-family: sans-serif;
-  }
+/* Estilos gerais que você já tinha (estão bons) */
+body {
+    background: #eef;
+    font-family: sans-serif;
+    overflow-x: hidden;
+    /* Evita a barra de rolagem horizontal quando o trem se move */
+}
 
-  .buttons,
-  .buttons:hover,
-  .buttons:active {
-      background-color: #007d46 !important;
-      color: white !important;
-      border: 1px solid #007d46 !important;
-  }
+.header {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-  .locomotiva{
-    width: 7%;
-    height: 7%;
-  }
+.headerButtons {
+    padding-top: 1rem;
+    display: flex;
+    gap: 25px;
+}
+
+.buttons,
+.buttons:hover,
+.buttons:active {
+    background-color: #007d46 !important;
+    color: white !important;
+    border: 1px solid #007d46 !important;
+}
 
 
-  #trem {
-      display: flex;
-      position: relative;
-      top: 100px;
-      transition: left 0.5s;
-  }
 
-  .vagao {
-      width: 9%;
-      height: 30%;
-  }
+.trajeto {
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 80px;
+    width: 100%;
+    height: 100px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
 
-  .invisivel {
-      display: none;
-  }
+/* O container principal do trem, que será animado */
+#trem {
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 0;
+    transition: left 0.7s;
+}
 
-  #linha {
-      position: absolute;
-      top: 160px;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: black;
-  }
+.locomotiva {
+    width: 8rem;
+    padding-bottom: 1rem;   
+    z-index: 10;
+}
+
+.vagao {
+    width: 11rem;
+    margin-left: -20px;
+    transition: opacity 0.5s;
+    /* Adiciona uma transição suave ao aparecer */
+}
+
+.invisivel {
+    /* Usar 'opacity' e 'width' é melhor para animações do que 'display: none' */
+    opacity: 0;
+    width: 0;
+    margin-left: 0;
+}
+
+#linha {
+    position: absolute;
+    top: 160px;
+    left: 0;
+    width: 100vw;
+    height: 4px;
+    background: black;
+}
+
+.flagIcon {
+    width: 5%;
+}
