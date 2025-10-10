@@ -1,9 +1,7 @@
-/* Estilos gerais que você já tinha (estão bons) */
 body {
     background: #eef;
     font-family: sans-serif;
     overflow-x: hidden;
-    /* Evita a barra de rolagem horizontal quando o trem se move */
 }
 
 .header {
@@ -29,8 +27,28 @@ body {
 
 
 
+
+
+.locomotiva {
+    width: 8rem;
+    padding-bottom: 1rem;   
+}
+
+.vagao {
+    width: 11rem;
+    margin-left: -20px;
+    transition: opacity 0.5s;
+}
+
+.invisivel {
+    opacity: 0;
+    width: 0;
+    margin-left: 0;
+}
+
+/* --- SEU CÓDIGO ATUALIZADO --- */
 .trajeto {
-    background-color: #333;
+    /* Seus estilos originais */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -39,35 +57,66 @@ body {
     height: 100px;
     padding: 0 20px;
     box-sizing: border-box;
+
+    /* --- Adições para o trilho --- */
+
+    /* 1. Cor de fundo (brita/terra) e posicionamento */
+    background-color: #ececec;
+    /* Sua cor original como base */
+    position: relative;
+    /* ESSENCIAL para posicionar os trilhos dentro desta div */
+    overflow: hidden;
+    /* Evita que algo saia dos limites */
+
+    /* 2. Desenho dos dormentes (madeiras) com gradiente */
+    background-image: repeating-linear-gradient(90deg,
+            /* Deixa os dormentes na horizontal */
+            rgba(155, 91, 13, 0.472),
+            /* Cor do dormente (um cinza escuro semi-transparente) */
+            rgb(155, 91, 13, 0.472) 20px,
+            /* Largura do dormente: 20px */
+            transparent 20px,
+            /* Espaço transparente começando em 20px */
+            transparent 60px
+            /* Espaço transparente terminando em 60px (dando 40px de espaço) */
+        );
 }
 
-/* O container principal do trem, que será animado */
+/* 3. Desenho dos trilhos de metal (em cima e em baixo) */
+.trajeto::before,
+.trajeto::after {
+    content: '';
+    /* Obrigatório para criar o elemento */
+    position: absolute;
+    /* Posiciona em relação ao .trajeto */
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #4a4a4a;
+    /* Cor do metal do trilho */
+}
+
+/* Posição do trilho de cima */
+.trajeto::before {
+    top: 30px;
+    /* Como a altura total é 100px, 30px do topo fica bom */
+}
+
+/* Posição do trilho de baixo */
+.trajeto::after {
+    bottom: 30px;
+    /* 30px de baixo para ficar simétrico */
+}
+
+
 #trem {
+    padding-bottom: 65px;
     display: flex;
     align-items: center;
     position: relative;
     left: 0;
     transition: left 0.7s;
-}
-
-.locomotiva {
-    width: 8rem;
-    padding-bottom: 1rem;   
-    z-index: 10;
-}
-
-.vagao {
-    width: 11rem;
-    margin-left: -20px;
-    transition: opacity 0.5s;
-    /* Adiciona uma transição suave ao aparecer */
-}
-
-.invisivel {
-    /* Usar 'opacity' e 'width' é melhor para animações do que 'display: none' */
-    opacity: 0;
-    width: 0;
-    margin-left: 0;
+    z-index: 0;
 }
 
 #linha {
@@ -79,6 +128,10 @@ body {
     background: black;
 }
 
+
+
 .flagIcon {
-    width: 5%;
+    height: 80px;
+    width: auto;
+    display: block;
 }

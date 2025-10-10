@@ -13,6 +13,9 @@ function adicionarVagao() {
     vagaoParaMostrar.classList.remove("invisivel");
   }
 }
+
+
+
 function removerVagao() {
 
   if (vagaoAtual <= 0) {
@@ -52,7 +55,6 @@ function mover() {
 
   trem.style.left = posicao + "px";
 
-  // --- A MÁGICA ACONTECE AQUI ---
   const tremRect = trem.getBoundingClientRect();
   const chegadaRect = chegada.getBoundingClientRect();
 
@@ -62,12 +64,10 @@ function mover() {
     trem.style.left = posicao + "px"; 
     return; 
   }
-  // --- FIM DA VERIFICAÇÃO ---
 
-  // Lógica para não deixar o trem passar do limite da tela (se você tiver uma)
-  /* if (posicao >= limiteDireito) {
-    posicao = limiteDireito;
-    trem.style.left = posicao + "px";
-  }
-  */
+   if (posicao >= limiteDireito) {
+     posicao = limiteDireito;
+     trem.style.left = posicao + "px";
+   }
+  
 }
