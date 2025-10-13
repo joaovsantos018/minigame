@@ -35,7 +35,7 @@ body {
 }
 
 .vagao {
-    width: 11rem;
+    width: 12rem;
     margin-left: -20px;
     transition: opacity 0.5s;
 }
@@ -46,15 +46,13 @@ body {
     margin-left: 0;
 }
 
-/* --- SEU CÓDIGO ATUALIZADO --- */
 .trajeto {
-    /* Seus estilos originais */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 80px;
+    margin-top: 150px;
     width: 100%;
-    height: 100px;
+    height: 70px;
     padding: 0 20px;
     box-sizing: border-box;
 
@@ -65,11 +63,11 @@ body {
     /* Sua cor original como base */
     position: relative;
     /* ESSENCIAL para posicionar os trilhos dentro desta div */
-    overflow: hidden;
+    /* overflow: hidden; */
     /* Evita que algo saia dos limites */
 
     /* 2. Desenho dos dormentes (madeiras) com gradiente */
-    background-image: repeating-linear-gradient(90deg,
+    background-image: repeating-linear-gradient(50deg,
             /* Deixa os dormentes na horizontal */
             rgba(155, 91, 13, 0.472),
             /* Cor do dormente (um cinza escuro semi-transparente) */
@@ -86,37 +84,35 @@ body {
 .trajeto::before,
 .trajeto::after {
     content: '';
-    /* Obrigatório para criar o elemento */
     position: absolute;
-    /* Posiciona em relação ao .trajeto */
     left: 0;
     width: 100%;
     height: 4px;
     background-color: #4a4a4a;
-    /* Cor do metal do trilho */
 }
 
 /* Posição do trilho de cima */
 .trajeto::before {
-    top: 30px;
-    /* Como a altura total é 100px, 30px do topo fica bom */
+    /*30 */
+    top: 40px;
 }
 
 /* Posição do trilho de baixo */
 .trajeto::after {
-    bottom: 30px;
+    bottom: 45px;
     /* 30px de baixo para ficar simétrico */
 }
 
 
 #trem {
-    padding-bottom: 65px;
+    margin-top: -30px;
+    padding-bottom: 60px;
     display: flex;
     align-items: center;
     position: relative;
     left: 0;
     transition: left 0.7s;
-    z-index: 0;
+    z-index: 1;
 }
 
 #linha {
@@ -132,6 +128,7 @@ body {
 
 .flagIcon {
     height: 80px;
+    margin-top: -90px;
     width: auto;
     display: block;
 }
