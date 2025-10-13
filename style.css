@@ -132,3 +132,14 @@ body {
     width: auto;
     display: block;
 }
+
+.printCode{
+    width: 650px;
+    height: 510px;
+}
+
+.imagesDiv {
+    display: flex;
+    padding-top: 30px;
+    justify-content: space-between;
+}
